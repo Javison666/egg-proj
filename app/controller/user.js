@@ -12,6 +12,7 @@ class UserController extends Controller {
           </div>
         `;
     }
+    
 
     async admin() {
         const { ctx } = this;
