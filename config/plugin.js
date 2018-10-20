@@ -1,7 +1,7 @@
 'use strict';
 
 // had enabled by egg
-module.exports.static = true
+// module.exports.static = true
 
 module.exports.passport = {
     enable: true,
