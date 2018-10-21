@@ -1,5 +1,0 @@
-module.exports={
-    encrypt(pwd){
-        
-    }
-}

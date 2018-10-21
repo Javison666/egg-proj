@@ -1,5 +1,6 @@
 'use strict';
 
+
 const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
@@ -15,7 +16,11 @@ class HomeController extends Controller {
 			if (row === null) {
 				throw '该用户不存在'
 			}
-			this.ctx.body = JSON.stringify(row.password)
+			if(this.ctx.service.crypt.login.encryptLoginPwd(this.ctx.query.password)!==row.password){
+				throw '密码输入不正确'
+			}
+			this.ctx.body = '登录成功'
+			
 		} catch (err) {
 			this.ctx.body = {
 				code: 400,
